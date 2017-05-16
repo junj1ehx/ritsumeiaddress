@@ -133,7 +133,7 @@ void group_find(struct task **top, struct task **end){
 
 
 
-  printf("グループ名を入力してください\n");
+  printf("グループ名を�E力してください\n");
   scanf("%s",sname); 
 
 while(p!= NULL){
@@ -177,7 +177,7 @@ void name_find(struct task **top, struct task **end){
 
 
 
-  printf("名前を入力してください\n");
+  printf("名前を�E力してください\n");
   scanf("%s",sname);
 
   while(p!= NULL){
@@ -216,7 +216,7 @@ void sex_find(struct task **top, struct task **end){
 
 
 
-  printf("性別を入力してください(１は男性、２は女性で)\n");
+  printf("性別を�E力してください(�E��E男性、E���E女性で)\n");
   scanf("%d", &sex);
 
 
@@ -249,18 +249,18 @@ void id_find(struct task **top, struct task **end){
 
   
   int cnt = 0;
-  int id;
+  int nid;
   char xname[SIZE];
   
 
 
 
 
-  printf("idを入力してください\n");
-  scanf("%d",&id);
+  printf("idを�E力してください\n");
+  scanf("%d",&nid);
 
   while(p!= NULL){
-    if((p->id) != id){ 
+    if((p->id) != nid){ 
       printf("%d,%s,%s,%s,%d\n", p->id,p->name,p->mail,p->group,p->sex); 
       p=p->next;  
       cnt = 1;

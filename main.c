@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <dirent.h>
 //define basic headfiles
 #include "functions.h"
 //define custom headfiles
@@ -12,9 +13,13 @@ int main(int argc,char const *argv[])
   	int filestatus;
   	int inputcode = -1;
   	int count;
+	DIR *dir;
 
   	filestatus = 0;//check file status,0 = null,1 = exist
-	
+	if ((dir=opendir("./data")) == NULL){  
+        		perror("Open dir error...");
+		return 0;         
+	}
 	
   	while (inputcode != 0)
     {
@@ -27,8 +32,8 @@ int main(int argc,char const *argv[])
     	printf("*           *         ********          ********\n");
     	printf("\n\n------------------------------------------------\n\n");
     	printf("       Welcome to Alpaca Contact System -0-\n\n\n");
-    	printf("(1)データ入力・追加\n");
-    	printf("(2)データ編集・erase\n");
+    	printf("(1)チE�Eタ入力�E追加\n");
+    	printf("(2)チE�Eタ編雁E�Eerase\n");
     	printf("(3)print input data(just add the sort system plz!)\n");
       	printf("(4)save file\n");
       	printf("(5)load file\n");
@@ -117,8 +122,8 @@ int main(int argc,char const *argv[])
 	    			printf("(1)sort by id \n(2)sort by name \n");
 	    			inputcode = get_input();
 	    			if (inputcode == 1){
-	      				id_find(&top,&end);
-	   				else if (inputcode == 2){
+	      				print_list(top,end);
+	   			} else if (inputcode == 2){
 	      				az_sort(&top,&end);
 							
 	    			} else {
@@ -129,7 +134,7 @@ int main(int argc,char const *argv[])
 	    			printf("(1)search by id \n(2)search by name \n(3)search by group \n(4)search by sex \n");
 	    			inputcode = get_input();
 	    			if (inputcode == 1){
-	      				print_list(top,end);
+	      				id_find(&top,&end);
 	    			} else if (inputcode == 2){
 	      				name_find(&top,&end);	
 	    			} else if (inputcode == 3){
