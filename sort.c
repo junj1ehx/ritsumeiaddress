@@ -260,7 +260,7 @@ void id_find(struct task **top, struct task **end){
   scanf("%d",&nid);
 
   while(p!= NULL){
-    if((p->id) != nid){ 
+    if((p->id) == nid){ 
       printf("%d,%s,%s,%s,%d\n", p->id,p->name,p->mail,p->group,p->sex); 
       p=p->next;  
       cnt = 1;
