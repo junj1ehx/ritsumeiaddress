@@ -29,27 +29,20 @@ void code(struct task **top);
 void decode(struct task **top);
 void raw_import(struct task **top, struct task **end);
 void raw_export(struct task *top,struct task *end);
-//cipher.c
-
-void update(struct task **head,struct task **end);
-void update_mail(struct task **top, struct task **end);
-//find.c
-void swap(struct task *x, struct task *y);
-void bubblesort_name(struct task s[], int len);
-void bubblesort_group(struct task s[], int len);
+//sort.c
 void az_sort(struct task **head,struct task **end);
 void group_sort(struct task **top, struct task **end);
+void update(struct task **head,struct task **end);
 void group_sort(struct task **head, struct task **end);
-void group_find(struct task **top, struct task **end);
+void group_find();
 void name_find(struct task **top, struct task **end);
 void sex_find(struct task **top, struct task **end);
-void id_find(struct task **top, struct task **end);
-//sort.c
+//cipher.c
 void csv_import(struct task **top,struct task **end);
 void csv_export(struct task *top,struct task *end);
 void txt_import(struct task **top, struct task **end);
 void txt_export(struct task *top,struct task *end);
 //csv.c
 void fdelete();
-//fdelete.c
+fdelete.c
 #endif

@@ -17,12 +17,10 @@ void csv_import(struct task **top, struct task **end){
 	
 	int filename_count = 0;
 	char pot = '.';
-	char slide = '/';
 	char c = 'c';
 	char s = 's';
 	char v = 'v';
 	filename_count = strlen(filename);
-	
 	filename[filename_count] = pot;
 	filename[filename_count+1] = c;
 	filename[filename_count+2] = s;
