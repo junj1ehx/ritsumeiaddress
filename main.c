@@ -13,13 +13,7 @@ int main(int argc,char const *argv[])
   	int filestatus;
   	int inputcode = -1;
   	int count;
-	DIR *dir;
 
-  	filestatus = 0;//check file status,0 = null,1 = exist
-	if ((dir=opendir("./data")) == NULL){  
-        		perror("Open dir error...");
-		return 0;         
-	}
 	
   	while (inputcode != 0)
     {
