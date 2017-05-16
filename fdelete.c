@@ -10,10 +10,10 @@ void fdelete(){
 	printf("file to delete:");
 	gets(filename);//input filename
 	if((fp = fopen(filename, "w")) == NULL) {  //¥Õ¥¡¥¤¥ë"filename"¤òºô¤Ó³ö¤·
-    printf("¥Õ¥¡¥¤¥ë¤¬ÒŠ¤Ä¤«¤ê¤Þ¤»¤ó\n");
+    printf("file was not found.\n");
 	} else {
     		fprintf(fp," ");
-			printf("¥Õ¥¡¥¤¥ë %s ¤òÏ÷³ý¤·¤Þ¤·¤¿.\n",filename);//Ï÷³ý¤·¤¿¤³¤È¤òˆó¸æ
+			printf("file %s was deleted successfully.\n",filename);//Ï÷³ý¤·¤¿¤³¤È¤òˆó¸æ
 			fclose(fp);      //¥Õ¥¡¥¤¥ë¤òé]¤¸¤ë
 	}    
 }

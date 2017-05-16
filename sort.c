@@ -93,7 +93,7 @@ void group_sort(struct task **head, struct task **end){
 
   int cnt = 1;
 
-  printf("グループ毎に表示\n");
+  printf("print by group\n");
 
   //printf("%s\n", p[1].group);
   //printf("%d,%s,%s,%s,%d\n",p[0].group,p[0].id,p[0].name,p[0].mail,p[0].group,p[0].sex);
@@ -102,14 +102,14 @@ void group_sort(struct task **head, struct task **end){
     if(p[i].group == '\0')
       break;
     if(strcmp(p[i].group,p[i+1].group)== 0 && cnt == 1){
-      printf("グループ名 : %s     %d,%s,%s,%s,%d\n",p[i].group,p[i].id,p[i].name,p[i].mail,p[i].group,p[i].sex);
+      printf("group name : %s     %d,%s,%s,%s,%d\n",p[i].group,p[i].id,p[i].name,p[i].mail,p[i].group,p[i].sex);
       cnt = 0;
     }else if(strcmp(p[i].group,p[i+1].group) == 0 && cnt == 0){
       printf("                  %d,%s,%s,%s,%d\n",p[i].id,p[i].name,p[i].mail,p[i].group,p[i].sex);
 
     }
     else if(strcmp(p[i].group,p[i+1].group)!=0 && cnt == 1 ){
-      printf("グループ名 : %s    %d,%s,%s,%s,%d\n",p[i].group,p[i].id,p[i].name,p[i].mail,p[i].group,p[i].sex);
+      printf("group name : %s    %d,%s,%s,%s,%d\n",p[i].group,p[i].id,p[i].name,p[i].mail,p[i].group,p[i].sex);
  
 	}  else if(strcmp(p[i].group,p[i+1].group)!=0 && cnt == 0){
       printf("                   %d,%s,%s,%s,%d\n",p[i].id,p[i].name,p[i].mail,p[i].group,p[i].sex);
@@ -133,7 +133,7 @@ void group_find(struct task **top, struct task **end){
 
 
 
-  printf("グループ名を入力してください\n");
+  printf("insert group's name:\n");
   scanf("%s",sname); 
 
 while(p!= NULL){
@@ -144,7 +144,7 @@ while(p!= NULL){
     }else{
       p=p->next;
       if(p==NULL && cnt == 0){
-	printf("見つかりませんでした\n");
+	printf("cannot find\n");
     }
     }
   }
@@ -177,7 +177,7 @@ void name_find(struct task **top, struct task **end){
 
 
 
-  printf("名前を入力してください\n");
+  printf("insert name:\n");
   scanf("%s",sname);
 
   while(p!= NULL){
@@ -188,7 +188,7 @@ void name_find(struct task **top, struct task **end){
     }else{
       p=p->next;
       if(p==NULL && cnt == 0){
-	printf("見つかりませんでした\n");
+	printf("cannot find\n");
     }
     }
   }
@@ -216,7 +216,7 @@ void sex_find(struct task **top, struct task **end){
 
 
 
-  printf("性別を入力してください(１は男性、２は女性で)\n");
+  printf("insert sex:(1)male (2)female\n");
   scanf("%d", &sex);
 
 
@@ -234,3 +234,41 @@ void sex_find(struct task **top, struct task **end){
   
 
 
+void id_find(struct task **top, struct task **end){
+
+  int id;
+  char name[SIZE];
+  char mail[SIZE];
+  char group[SIZE];
+  int sex;
+
+
+  struct task *p = *top;
+  struct task *q = *end;
+ 
+
+  
+  int cnt = 0;
+  int nid;
+  char xname[SIZE];
+  
+
+
+
+
+  printf("insert id:\n");
+  scanf("%d",&nid);
+
+  while(p!= NULL){
+    if((p->id) != nid){ 
+      printf("%d,%s,%s,%s,%d\n", p->id,p->name,p->mail,p->group,p->sex); 
+      p=p->next;  
+      cnt = 1;
+    }else{
+      p=p->next;
+      if(p==NULL && cnt == 0){
+  printf("cannot find\n");
+    }
+    }
+  }
+}

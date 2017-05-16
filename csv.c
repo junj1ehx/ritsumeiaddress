@@ -17,10 +17,12 @@ void csv_import(struct task **top, struct task **end){
 	
 	int filename_count = 0;
 	char pot = '.';
+	char slide = '/';
 	char c = 'c';
 	char s = 's';
 	char v = 'v';
 	filename_count = strlen(filename);
+	
 	filename[filename_count] = pot;
 	filename[filename_count+1] = c;
 	filename[filename_count+2] = s;
@@ -65,7 +67,7 @@ void csv_import(struct task **top, struct task **end){
 	}
 
  	if ((fp =fopen(filename,"r")) == NULL){
-    	fprintf(stderr,"ファイルが開けません\n");
+    	fprintf(stderr,"file cannot be opened.\n");
 	} else {
   		while(fscanf(fp,"%d,%[^,],%[^,],%[^,],%d\n",&id,temp->name,temp->mail,temp->group,&(temp->sex))!= EOF){
     		temp-> id = count;
@@ -141,7 +143,7 @@ void txt_import(struct task **top, struct task **end){
 	}
 
  	if ((fp =fopen(filename,"r")) == NULL){
-    	fprintf(stderr,"ファイルが開けません\n");
+    	fprintf(stderr,"file cannot be opened\n");
 	} else {
   		while(fscanf(fp,"%d %s %s %s %d \n",&id,temp->name,temp->mail,temp->group,&(temp->sex))!= EOF){
     		temp-> id = count;
@@ -197,7 +199,7 @@ void csv_export(struct task *top,struct task *end){
 		count++;	
 	}
 	printf("\n%d member saved successfully.\n",count);
-	printf("ファイルの書き込みが終わりました\n");
+	printf("file was written successfully.\n");
 	fclose(fp);
 	}
 }
@@ -238,7 +240,7 @@ void txt_export(struct task *top,struct task *end){
 		count++;	
 	}
 	printf("\n%d member saved successfully.\n",count);
-	printf("ファイルの書き込みが終わりました\n");
+	printf("file was written successfully\n");
 	fclose(fp);
 	}
 }

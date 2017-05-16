@@ -15,14 +15,14 @@ void update_name(struct task **top, struct task **end){
   char sname[SIZE]; /*検索する名前*/
   char nstr[SIZE];
 
-  printf("編集したい名前を入力してください\n");
+  printf("insert the name which you want to edit:\n");
   scanf("%s",sname);
 
 
   while(p !=NULL){
     if(strcmp(p->name,sname) == 0){ 
       printf("%d,%s,%s,%s,%d\n", p->id,p->name,p->mail,p->group,p->sex); 
-      printf("新しい名前を入力してください\n");
+      printf("insert the new name:\n");
       scanf("%s", nstr);
       strcpy(p->name,nstr);
       printf("%s\n",p->name);
@@ -31,7 +31,7 @@ void update_name(struct task **top, struct task **end){
     }else {
       p = p->next;
 if(p==NULL && cnt == 0){
-	printf("見つかりませんでした\n");
+	printf("can't find\n");
  }
     }
   }
@@ -50,14 +50,14 @@ void update_mail(struct task **top, struct task **end){
   char sname[SIZE]; /*検索する名前*/
   char nstr[SIZE];
 
-  printf("編集したいメールアドレスを入力してください\n");
+  printf("insert the mail you want to edit:\n");
   scanf("%s",sname);
 
 
   while(p !=NULL){
     if(strcmp(p->name,sname) == 0){ 
       printf("%d,%s,%s,%s,%d\n", p->id,p->name,p->mail,p->group,p->sex); 
-      printf("新しいメールアドレスを入力してください\n");
+      printf("insert the new mail:\n");
       scanf("%s", nstr);
       strcpy(p->name,nstr);
       printf("%s\n",p->name);
@@ -66,7 +66,7 @@ void update_mail(struct task **top, struct task **end){
     }else {
       p = p->next;
 if(p==NULL && cnt == 0){
-	printf("見つかりませんでした\n");
+	printf("can't find.\n");
  }
     }
   }

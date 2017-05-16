@@ -21,13 +21,13 @@ void add(struct task **top,struct task **end){
 		temp = temp->next;
 		}
 		//value for giving id 
-    printf("名前を入力してください\n");
+    printf("insert name:\n");
     gets(temp->name);
-    printf("メールアドレスを入力してください\n");
+    printf("insert mail:\n");
     gets(temp->mail);
-    printf("グループを入力してください\n");
+    printf("insert group:\n");
     gets(temp->group);
-	printf("性別を入力してください(１は男性、２は女性で)\n");
+	printf("insert sex (1)male (2)female\n");
 	scanf("%d",&sex);
 	temp->next = NULL;
 	temp->sex = sex;
